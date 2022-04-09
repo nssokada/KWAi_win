@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.emotionAssessment3">
+   <children>
+      <AnchorPane fx:id="pane1" layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: rgb(25,25,50,1);">
+         <children>
+            <Label layoutX="89.0" layoutY="131.0" prefHeight="65.0" prefWidth="200.0" text="based on your answers we recommend:" textAlignment="CENTER" textFill="#fdfdfd">
+               <font>
+                  <Font name="Calibri" size="12.0" />
+               </font>
+            </Label>
+            <Label layoutX="146.0" layoutY="86.0" prefHeight="65.0" prefWidth="87.0" text="emotion assessment" textAlignment="CENTER" textFill="#5a5a89">
+               <font>
+                  <Font name="Calibri" size="10.0" />
+               </font>
+            </Label>
+            <Button fx:id="calm" layoutX="129.0" layoutY="240.0" mnemonicParsing="false" text="Calm" />
+            <Button fx:id="happy" layoutX="202.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Happy" />
+            <Button fx:id="relax" layoutX="289.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Relax" />
+            <Button fx:id="creative" layoutX="31.0" layoutY="240.0" mnemonicParsing="false" text="Creative" />
+            <ImageView fitHeight="76.0" fitWidth="85.0" layoutX="146.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@kwai_icons/user_emotion_icon.png" />
+               </image>
+            </ImageView>
+         </children></AnchorPane>
+      <MenuBar layoutX="19.0" layoutY="28.0" prefHeight="28.0" prefWidth="902.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <menus>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="28.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kwai_icons/kwai_logo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#home" text="home" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kwai_icons/profile.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+            <Menu mnemonicParsing="false">
+               <graphic>
+                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@kwai_icons/settings.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Menu>
+         </menus>
+      </MenuBar>
+   </children>
+</AnchorPane>
