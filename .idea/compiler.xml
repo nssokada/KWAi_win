@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="KWAi_win" target="18" />
+      <module name="KWAi_win" target="17" />
     </bytecodeTargetLevel>
   </component>
 </project>

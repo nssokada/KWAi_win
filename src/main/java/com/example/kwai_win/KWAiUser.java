@@ -12,7 +12,6 @@ public class KWAiUser {
 
     }
 
-
     public void setName(String name) {
         this.name = name;
     }
