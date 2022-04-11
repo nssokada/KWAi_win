@@ -46,7 +46,7 @@ public class emotionAssessment3 implements Initializable{
     private int valence;
     private int arousal;
 
-    KWAiUser user = emotionAssessment1.user;
+    KWAiUser user = loginController.user;
 
     @FXML
     void home(ActionEvent event) throws IOException{

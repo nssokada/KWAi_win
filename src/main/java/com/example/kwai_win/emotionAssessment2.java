@@ -14,9 +14,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import java.sql.Connection;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
 
 public class emotionAssessment2 implements Initializable {
@@ -25,7 +27,7 @@ public class emotionAssessment2 implements Initializable {
     private Scene scene;
     private Parent root;
 
-    KWAiUser user = emotionAssessment1.user;
+    KWAiUser user = loginController.user;
 
     @FXML
     private Parent rooter;
@@ -115,11 +117,25 @@ public class emotionAssessment2 implements Initializable {
     @FXML
     void submitForm(ActionEvent event) throws IOException {
         try {
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Takes VALUES(?, ?, ?, ?, curDate())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.setString(2, "3");
+                preparedStatement.setString(3, String.valueOf(user.getArousal()));
+                preparedStatement.setString(4, String.valueOf(user.getValence()));
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
             Parent root = FXMLLoader.load(getClass().getResource("emotionAssessment3.fxml"));
             stage = (Stage)((Node)event.getSource()).getScene().getWindow();
             scene = new Scene(root);
             stage.setScene(scene);
             stage.show();
+
         }
         catch (IOException e) {
             e.printStackTrace();
