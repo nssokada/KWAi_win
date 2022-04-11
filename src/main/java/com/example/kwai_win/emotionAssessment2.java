@@ -121,11 +121,12 @@ public class emotionAssessment2 implements Initializable {
             Connection connectDB = connection.getConnection();
 
             try {
-                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Takes VALUES(?, ?, ?, ?, curDate())");
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Takes VALUES(?, ?, ?, ?, Now())");
                 preparedStatement.setString(1, String.valueOf(user.getUID()));
                 preparedStatement.setString(2, "3");
                 preparedStatement.setString(3, String.valueOf(user.getArousal()));
                 preparedStatement.setString(4, String.valueOf(user.getValence()));
+                preparedStatement.executeUpdate();
             } catch (Exception e) {
                 e.printStackTrace();
             }

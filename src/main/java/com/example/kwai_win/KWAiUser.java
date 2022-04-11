@@ -15,7 +15,7 @@ public class KWAiUser {
         this.name = name;
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnection();
-        String getUID = "SELECT count(1) FROM User WHERE username = '" + name + "'";
+        String getUID = "SELECT uID FROM User WHERE username = '" + name + "'";
         try {
             Statement statement = connectDB.createStatement();
             ResultSet queryResult  = statement.executeQuery(getUID);
