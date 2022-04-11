@@ -24,15 +24,26 @@
                   <Font name="Calibri" size="10.0" />
                </font>
             </Label>
-            <Button fx:id="calm" layoutX="129.0" layoutY="240.0" mnemonicParsing="false" text="Calm" />
-            <Button fx:id="happy" layoutX="202.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Happy" />
-            <Button fx:id="relax" layoutX="289.0" layoutY="240.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="62.0" text="Relax" />
-            <Button fx:id="creative" layoutX="31.0" layoutY="240.0" mnemonicParsing="false" text="Creative" />
             <ImageView fitHeight="76.0" fitWidth="85.0" layoutX="146.0" layoutY="35.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@kwai_icons/user_emotion_icon.png" />
                </image>
             </ImageView>
+            <Button fx:id="happy1" layoutX="55.0" layoutY="245.0" mnemonicParsing="false" text="happy (1)" />
+            <Button fx:id="happy2" layoutX="154.0" layoutY="245.0" mnemonicParsing="false" text="happy (2)" />
+            <Button fx:id="happy3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" text="happy (3)" />
+            <Button fx:id="calm1" layoutX="53.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="71.0" text="calm (1)" />
+            <Button fx:id="calm2" layoutX="153.0" layoutY="245.0" mnemonicParsing="false" prefWidth="72.0" text="calm (2)" />
+            <Button fx:id="calm3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="calm (3)" />
+            <Button fx:id="relax1" layoutX="51.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="77.0" text="relax (1)" />
+            <Button fx:id="relax2" layoutX="149.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="relax (2)" />
+            <Button fx:id="relax3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="relax (3)" />
+            <Button fx:id="creative1" layoutX="49.0" layoutY="246.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="81.0" text="creative (1)" />
+            <Button fx:id="creative2" layoutX="146.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="creative (2)" />
+            <Button fx:id="creative3" layoutX="262.0" layoutY="245.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="creative (3)" />
+            <Button fx:id="sleep1" layoutX="49.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="81.0" text="sleep (1)" />
+            <Button fx:id="sleep2" layoutX="146.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="sleep (2)" />
+            <Button fx:id="sleep3" layoutX="262.0" layoutY="244.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="sleep (3)" />
          </children></AnchorPane>
       <MenuBar layoutX="19.0" layoutY="28.0" prefHeight="28.0" prefWidth="902.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <menus>

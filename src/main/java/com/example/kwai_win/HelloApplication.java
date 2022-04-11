@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
         try {
             Stage primaryStage  = new Stage();
             Parent root = null;
-            root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+            root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
             Scene scene = new Scene(root);
             primaryStage.setScene(scene);
       //      primaryStage.setResizable(false);   @team do we want to implement this
