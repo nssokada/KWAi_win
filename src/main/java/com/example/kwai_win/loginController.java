@@ -12,12 +12,16 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
 
 public class loginController {
 
     private Stage stage;
     private Scene scene;
     private Parent root;
+    public static KWAiUser user = new KWAiUser();
 
     @FXML
     private Parent rooter;
@@ -47,7 +51,29 @@ public class loginController {
     //TODO
     public void validateLogin(){
         //please implement login with database here
-        //here is a helpful sample: https://www.youtube.com/watch?v=J0IE5LRyzx8 
+        //here is a helpful sample: https://www.youtube.com/watch?v=J0IE5LRyzx8
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connectDB = connection.getConnection();
+
+        String verifyLogin = "SELECT count(1) FROM User WHERE username = '" + usernameTextfield.getText() + "' AND password = '" + passwordPasswordField.getText() + "'";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult  = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()) {
+                if (queryResult.getInt(1) == 1) {
+                    loginMessagelabel.setText("Welcome! Click on our logo to continue.");
+                    user.setName(usernameTextfield.getText());
+                } else {
+                    loginMessagelabel.setText("Invalid Login. Please try again.");
+                }
+            }
+
+        }  catch (Exception e) {
+            e.printStackTrace();
+        }
+
     }
 
 

@@ -26,6 +26,7 @@ public class emotionAssessment1 implements Initializable {
     private Stage stage;
     private Scene scene;
     private Parent root;
+    KWAiUser user = loginController.user;
 
     public int valence = 0;
     public int arousal = 0;
@@ -33,7 +34,6 @@ public class emotionAssessment1 implements Initializable {
     @FXML
     private Parent rooter;
 
-    public static KWAiUser user =new KWAiUser(0,0);
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
