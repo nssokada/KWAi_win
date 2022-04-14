@@ -18,7 +18,15 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.util.ResourceBundle;
+
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+
 
 public class emotionAssessment3 implements Initializable{
 
@@ -118,6 +126,29 @@ public class emotionAssessment3 implements Initializable{
         happy2.setManaged(false);
         happy3.setVisible(false);
         happy3.setManaged(false);
+
+
+        // TODO: Once buttons are implemented, paste corresponding SQL insert queries into the corresponding button actions
+        // INSERT INTO Creates VALUES(uID, relax, Now());
+        // INSERT INTO Creates VALUES(uID, sleep, Now());
+        // INSERT INTO Creates VALUES(uID, happy, Now());
+        // INSERT INTO Creates VALUES(uID, creative, Now());
+        // INSERT INTO Creates VALUES(uID, calm, Now());
+
+/*        try {
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                PreparedStatement preparedStatement = connectDB.prepareStatement("INSERT INTO Takes VALUES(?, ?, ?, ?, Now())");
+                preparedStatement.setString(1, String.valueOf(user.getUID()));
+                preparedStatement.setString(2, "3");
+                preparedStatement.setString(3, String.valueOf(user.getArousal()));
+                preparedStatement.setString(4, String.valueOf(user.getValence()));
+                preparedStatement.executeUpdate();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }*/
 
 
         //relax 1, sleep 1 , and ??
