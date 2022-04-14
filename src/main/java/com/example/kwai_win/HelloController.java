@@ -15,6 +15,8 @@ import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+import processing.core.PApplet;
+
 import java.io.IOException;
 
 public class HelloController {
@@ -72,10 +74,8 @@ public class HelloController {
     }
     @FXML
     void customization(ActionEvent event) throws IOException{
-      //  PApplet.main("Relax");
+        PApplet.main("sleep");
     }
-
-
 
     @FXML
     void listen(ActionEvent event) throws IOException{
@@ -92,9 +92,4 @@ public class HelloController {
         String preset = button.getText();
         System.out.println(preset);
     }
-
-
-
-
-
 }
