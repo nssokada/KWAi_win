@@ -31,7 +31,6 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.chart.*;
 
-
 public class UserDashboardController implements Initializable{
 
     private Stage stage;
@@ -50,9 +49,6 @@ public class UserDashboardController implements Initializable{
     private Label viz;
     @FXML
     private LineChart lineChart;
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {

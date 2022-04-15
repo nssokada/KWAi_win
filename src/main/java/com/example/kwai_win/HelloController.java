@@ -74,7 +74,7 @@ public class HelloController {
     }
     @FXML
     void customization(ActionEvent event) throws IOException{
-        PApplet.main("sleep");
+        PApplet.main("my_audio_visualizer");
     }
 
     @FXML

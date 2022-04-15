@@ -15,7 +15,6 @@ module com.example.kwai_win {
     requires controlP5;
     requires sound;
 
-
     opens com.example.kwai_win to javafx.fxml;
     exports com.example.kwai_win;
 

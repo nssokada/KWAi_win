@@ -1,20 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.HelloController">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.ListenCotroller">
    <children>
       <AnchorPane layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: #191932#191932;">
          <children>
-            <Button layoutX="42.0" layoutY="176.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="71.0" style="-fx-background-color: #13FED4#13FED4;" text="Relaxed ">
+            <Button layoutX="42.0" layoutY="176.0" mnemonicParsing="false" onAction="#relax" prefHeight="38.0" prefWidth="71.0" style="-fx-background-color: #13FED4#13FED4;" text="Relaxed ">
                <font>
                   <Font size="7.0" />
                </font>
@@ -24,22 +19,22 @@
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button layoutX="161.0" layoutY="174.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #d3801d#d3801d;" text="Happy">
+            <Button layoutX="161.0" layoutY="174.0" mnemonicParsing="false" onAction="#happy" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #d3801d#d3801d;" text="Happy">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="57.0" style="-fx-background-color: #f0515a#f0515a;" text="Motivation">
+            <Button fx:id="creativity" layoutX="283.0" layoutY="176.0" mnemonicParsing="false" onAction="#creativity" prefHeight="39.0" prefWidth="57.0" style="-fx-background-color: #f0515a#f0515a;" text="Motivation">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="100.0" layoutY="269.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="57.0" style="-fx-background-color: #1878f3#1878f3;" text="Calm">
+            <Button fx:id="calm" layoutX="100.0" layoutY="269.0" mnemonicParsing="false" onAction="#calm" prefHeight="37.0" prefWidth="57.0" style="-fx-background-color: #1878f3#1878f3;" text="Calm">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="238.0" layoutY="272.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="57.0" style="-fx-background-color: #bc42f5#bc42f5;" text="Sleepy">
+            <Button fx:id="sleep" layoutX="238.0" layoutY="272.0" mnemonicParsing="false" onAction="#sleep" prefHeight="32.0" prefWidth="57.0" style="-fx-background-color: #bc42f5#bc42f5;" text="Sleepy">
                <font>
                   <Font size="7.0" />
                </font>

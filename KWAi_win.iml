@@ -204,6 +204,15 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: happyMat:happyMat:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/happyMat.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: minim:minim:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/minim.jar!/" />
