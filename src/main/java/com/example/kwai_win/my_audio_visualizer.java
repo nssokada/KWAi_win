@@ -172,17 +172,7 @@ public class Visualizer{
     fft.forward(input.mix);
     //noStroke();
     img = loadImage("kwai_logo.jpg");
-  //  pushStyle();
-  //  colorMode(RGB, 360);   //REMOVE THIS OR NAH?
-  //  if(fade) {
-  //    noStroke();
-  //    fill(0, 25);
-  //    rect(0, 0, width, height);
-  //} else {
-  //  background(0);
-  //}
-  //popStyle();
-  //fft.forward(input.mix);
+
     switch(visualizationIndex) {
       case 0:
         //fill(0, 0, 0);
@@ -368,22 +358,7 @@ public void function2(){
   }
   
     private void function4(){
-  //pushStyle();
-  //colorMode(RGB, 360);   //REMOVE THIS OR NAH?
-  //if (fade) {
-  //  noStroke();
-  //  fill(0, 25);
-  //  rect(0, 0, width, height);
-  //} else {
-  //  background(0);
-  //}
-  //popStyle();
-  //fft.forward(input.mix);
-  //for (int i = 0; i < fft.specSize() - 1; i++) {
-  //  particles[i].update(fft.getBand(i), input.mix.get(i*2));
-  //  particles[i].render();
-  //  particles[i].render();
-  //}
+
     float angle,angle2,inc,waveX,waveY,a,x,y,w,x1,y1;
     float size;
     

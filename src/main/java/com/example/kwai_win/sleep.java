@@ -22,13 +22,6 @@ import java.io.IOException;
 
 public class sleep extends PApplet {
 
-
-
-
-
-
-
-
 float fps = 30; 
 float smoothingFactor = 0.25f;
 AudioPlayer player;
