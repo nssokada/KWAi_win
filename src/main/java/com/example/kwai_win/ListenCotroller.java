@@ -30,6 +30,25 @@ public class ListenCotroller {
     }
 
     @FXML
+    void userDashboard(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
+    @FXML
+    void login(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     void creativity(ActionEvent event) throws IOException {
         PApplet.main("creativity");
     }

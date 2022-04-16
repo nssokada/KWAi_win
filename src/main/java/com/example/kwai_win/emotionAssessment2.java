@@ -37,6 +37,33 @@ public class emotionAssessment2 implements Initializable {
     }
 
     @FXML
+    void home(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void userDashboard(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void login(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
     void calm(ActionEvent event) throws IOException {
         user.addValence(6);
         user.addArousal(-6);
@@ -104,14 +131,6 @@ public class emotionAssessment2 implements Initializable {
         user.addArousal(5);
     }
 
-    @FXML
-    void home(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
-        stage = (Stage)rooter.getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
 
 
     @FXML

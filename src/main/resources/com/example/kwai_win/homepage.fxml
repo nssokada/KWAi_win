@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1) rgb(5,5,15,1);" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.HelloController">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1) rgb(5,5,15,1);" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.HelloController">
    <children>
       <AnchorPane layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: #181832;">
          <children>
@@ -29,7 +29,7 @@
                   <Font size="12.0" />
                </font>
             </Label>
-            <Button alignment="BASELINE_LEFT" layoutX="147.0" layoutY="258.0" mnemonicParsing="false" onAction="#listen" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Listen" textFill="#5a5a89">
+            <Button alignment="BASELINE_LEFT" layoutX="147.0" layoutY="242.0" mnemonicParsing="false" onAction="#listen" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Listen" textFill="#5a5a89">
                <font>
                   <Font size="12.0" />
                </font>
@@ -41,7 +41,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="32.0" layoutY="257.0" mnemonicParsing="false" onAction="#emotionControl" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Emotion" textFill="#5a5a89">
+            <Button alignment="BASELINE_LEFT" layoutX="32.0" layoutY="241.0" mnemonicParsing="false" onAction="#emotionControl" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Emotion" textFill="#5a5a89">
                <font>
                   <Font size="12.0" />
                </font>
@@ -53,7 +53,7 @@
                   </ImageView>
                </graphic>
             </Button>
-            <Button alignment="BASELINE_LEFT" layoutX="247.0" layoutY="258.0" mnemonicParsing="false" onAction="#customization" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Customize" textFill="#5a5a89">
+            <Button alignment="BASELINE_LEFT" layoutX="247.0" layoutY="242.0" mnemonicParsing="false" onAction="#customization" prefHeight="23.0" prefWidth="97.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" text="Customize" textFill="#5a5a89">
                <font>
                   <Font size="12.0" />
                </font>
@@ -81,7 +81,7 @@
                   <MenuItem mnemonicParsing="false" onAction="#home" text="home" />
                </items>
             </Menu>
-            <Menu mnemonicParsing="false">
+            <Menu mnemonicParsing="false" onAction="#userDashboard">
                <graphic>
                   <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -89,15 +89,10 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Menu>
-            <Menu mnemonicParsing="false">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@kwai_icons/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userDashboard" text="dashboard" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="login" />
+               </items>
             </Menu>
          </menus>
       </MenuBar>

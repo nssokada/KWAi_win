@@ -9,9 +9,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.CheckBox;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
@@ -50,6 +48,17 @@ public class UserDashboardController implements Initializable{
     @FXML
     private LineChart lineChart;
 
+    @FXML
+    private Parent rooter;
+    @FXML
+    private Button loginButton;
+    @FXML
+    private Label loginMessagelabel;
+    @FXML
+    private TextField usernameTextfield;
+    @FXML
+    private PasswordField passwordPasswordField;
+
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
@@ -83,4 +92,33 @@ public class UserDashboardController implements Initializable{
 
         lineChart.getData().add(dataSeries1);
     }
+
+    @FXML
+    void home(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void userDashboard(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    @FXML
+    void login(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+
 }

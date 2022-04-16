@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.emotionAssessment2">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.emotionAssessment2">
    <children>
       <AnchorPane layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: rgb(25,25,50,1);">
          <children>
@@ -64,7 +64,7 @@
                   <Font name="Calibri" size="12.0" />
                </font>
             </Label>
-            <Label layoutX="146.0" layoutY="86.0" prefHeight="65.0" prefWidth="87.0" text="emotion assessment" textAlignment="CENTER" textFill="#5a5a89">
+            <Label layoutX="146.0" layoutY="107.0" prefHeight="30.0" prefWidth="87.0" text="emotion assessment" textAlignment="CENTER" textFill="#5a5a89">
                <font>
                   <Font name="Calibri" size="10.0" />
                </font>
@@ -102,15 +102,10 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Menu>
-            <Menu mnemonicParsing="false">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@kwai_icons/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userDashboard" text="dashboard" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="login" />
+               </items>
             </Menu>
          </menus>
       </MenuBar>
