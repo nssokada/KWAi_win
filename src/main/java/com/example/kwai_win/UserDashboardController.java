@@ -31,6 +31,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import javafx.scene.chart.*;
 
+// These imports are for using JDBC
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
 
 public class UserDashboardController implements Initializable{
 
@@ -51,16 +56,65 @@ public class UserDashboardController implements Initializable{
     @FXML
     private LineChart lineChart;
 
-    // TODO:
-
-
-
     @Override
     public void initialize(URL url, ResourceBundle rb) {
 
-        aro.setText("150");
-        val.setText("300");
-        avg.setText("215");
+
+
+        // Database Connection stuff
+
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connectDB = connection.getConnection();
+
+        String lastArousal = "SELECT aScore FROM Takes WHERE uID = 50 ORDER BY date DESC LIMIT 1";
+        // TODO: Make this query dynamic to the user
+
+        // JDBC code for getting the latest arousal
+
+        int arousal = 0;
+        int valence = 0;
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult1  = statement.executeQuery(lastArousal);
+
+            while(queryResult1.next()) {
+                if (queryResult1.getInt(1) == 1) {
+                    arousal = queryResult1.getInt("aScore");
+                } else {
+                    aro.setText("N/A");
+                }
+            }
+
+        }  catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // JDBC code for getting the latest valence
+        String lastValence = "SELECT vScore FROM Takes WHERE uID = 50 ORDER BY date DESC LIMIT 1";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+            while(queryResult2.next()) {
+                if (queryResult2.getInt(1) == 1) {
+                    valence = queryResult2.getInt("vScore");
+                } else {
+                    val.setText("N/A");
+                }
+            }
+
+        }  catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
         viz.setText("Happy");
         showLineCharts();
 
