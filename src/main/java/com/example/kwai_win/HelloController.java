@@ -49,7 +49,23 @@ public class HelloController {
         stage.show();
     }
 
+    @FXML
+    void userDashboard(ActionEvent event) throws IOException{
+        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
+    @FXML
+    void login(ActionEvent event) throws IOException {
+        root = FXMLLoader.load(getClass().getResource("loginScreen.fxml"));
+        stage = (Stage)rooter.getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     @FXML
     void showNextScreen(ActionEvent event) throws IOException {
@@ -64,17 +80,10 @@ public class HelloController {
             e.printStackTrace();
         }
     }
-    @FXML
-    void userDashboard(ActionEvent event) throws IOException{
-        root = FXMLLoader.load(getClass().getResource("userdashboard.fxml"));
-        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
+
     @FXML
     void customization(ActionEvent event) throws IOException{
-        PApplet.main("sleep");
+        PApplet.main("my_audio_visualizer");
     }
 
     @FXML

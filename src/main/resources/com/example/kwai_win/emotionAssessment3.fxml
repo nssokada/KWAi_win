@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.emotionAssessment3">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: rgb(5,5,15,1); -fx-background-image: KY_image2.png;" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.emotionAssessment3">
    <children>
       <AnchorPane fx:id="pane1" layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: rgb(25,25,50,1);">
          <children>
@@ -29,21 +29,36 @@
                   <Image url="@kwai_icons/user_emotion_icon.png" />
                </image>
             </ImageView>
-            <Button fx:id="happy1" layoutX="55.0" layoutY="245.0" mnemonicParsing="false" text="happy (1)" />
-            <Button fx:id="happy2" layoutX="154.0" layoutY="245.0" mnemonicParsing="false" text="happy (2)" />
-            <Button fx:id="happy3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" text="happy (3)" />
-            <Button fx:id="calm1" layoutX="53.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="71.0" text="calm (1)" />
-            <Button fx:id="calm2" layoutX="153.0" layoutY="245.0" mnemonicParsing="false" prefWidth="72.0" text="calm (2)" />
-            <Button fx:id="calm3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="78.0" text="calm (3)" />
-            <Button fx:id="relax1" layoutX="51.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="77.0" text="relax (1)" />
-            <Button fx:id="relax2" layoutX="149.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="77.0" text="relax (2)" />
-            <Button fx:id="relax3" layoutX="263.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" text="relax (3)" />
-            <Button fx:id="creative1" layoutX="49.0" layoutY="246.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="81.0" text="creative (1)" />
-            <Button fx:id="creative2" layoutX="146.0" layoutY="246.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="creative (2)" />
-            <Button fx:id="creative3" layoutX="262.0" layoutY="245.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="creative (3)" />
-            <Button fx:id="sleep1" layoutX="49.0" layoutY="245.0" mnemonicParsing="false" prefHeight="28.0" prefWidth="81.0" text="sleep (1)" />
-            <Button fx:id="sleep2" layoutX="146.0" layoutY="245.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="81.0" text="sleep (2)" />
-            <Button fx:id="sleep3" layoutX="262.0" layoutY="244.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="79.0" text="sleep (3)" />
+            <ImageView fitHeight="139.0" fitWidth="377.0" layoutY="206.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@kwai_icons/button_bg.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="happy1" layoutX="50.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff9500#ff9500 #ff9500#ff9500;" text="happy">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="creative1" layoutX="150.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #ff0000 #ff0000;" text="creative">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="calm1" layoutX="245.0" layoutY="225.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #00b07b#00b07b #00b07b#00b07b;" text="calm">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="relax1" layoutX="95.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #1878f3 #1878f3 #1878f3 #1878f3;" text="relax">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
+            <Button fx:id="sleep1" layoutX="203.0" layoutY="272.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="79.0" style="-fx-background-color: #d000ff #d000ff;" text="sleep">
+               <font>
+                  <Font size="11.0" />
+               </font>
+            </Button>
          </children></AnchorPane>
       <MenuBar layoutX="19.0" layoutY="28.0" prefHeight="28.0" prefWidth="902.0" style="-fx-background-color: rgb(25,25,50,1) rgb(25,25,50,1);" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <menus>
@@ -67,15 +82,10 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Menu>
-            <Menu mnemonicParsing="false">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@kwai_icons/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userDashboard" text="dashboard" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="login" />
+               </items>
             </Menu>
          </menus>
       </MenuBar>

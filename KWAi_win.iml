@@ -204,6 +204,51 @@
       </library>
     </orderEntry>
     <orderEntry type="module-library">
+      <library name="Maven: Calm:Calm:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Calm.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: creativity:creativity:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/creativity.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: happyMat:happyMat:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/happyMat.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: Relax:Relax:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/Relax.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: sleep:sleep:1.0">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/sleep.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
       <library name="Maven: minim:minim:1.0">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/minim.jar!/" />

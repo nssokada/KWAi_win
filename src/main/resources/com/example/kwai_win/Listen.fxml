@@ -1,45 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.Menu?>
-<?import javafx.scene.control.MenuBar?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.text.Font?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.HelloController">
+<AnchorPane fx:id="rooter" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="560.0" prefWidth="901.0" style="-fx-background-color: black;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.kwai_win.ListenCotroller">
    <children>
       <AnchorPane layoutX="271.0" layoutY="107.0" prefHeight="338.0" prefWidth="377.0" style="-fx-background-color: #191932#191932;">
          <children>
-            <Button layoutX="42.0" layoutY="176.0" mnemonicParsing="false" prefHeight="38.0" prefWidth="71.0" style="-fx-background-color: #13FED4#13FED4;" text="Relaxed ">
+            <Button layoutX="39.0" layoutY="176.0" mnemonicParsing="false" onAction="#relax" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #1878f3 #1878f3;" text="Relaxed " textFill="WHITE">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Label alignment="CENTER" layoutX="60.0" layoutY="123.0" prefHeight="16.0" prefWidth="276.0" text="Based on your responses we recommend the following moods" textAlignment="CENTER" textFill="#5a5a89" wrapText="true">
+            <Label alignment="CENTER" layoutX="52.0" layoutY="107.0" prefHeight="16.0" prefWidth="276.0" text="Based on your responses we recommend the following moods" textAlignment="CENTER" textFill="#5a5a89" wrapText="true">
                <font>
                   <Font size="10.0" />
                </font>
             </Label>
-            <Button layoutX="161.0" layoutY="174.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #d3801d#d3801d;" text="Happy">
+            <Button layoutX="155.0" layoutY="176.0" mnemonicParsing="false" onAction="#happy" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #ff9500#ff9500;" text="Happy" textFill="WHITE">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="283.0" layoutY="176.0" mnemonicParsing="false" prefHeight="39.0" prefWidth="57.0" style="-fx-background-color: #f0515a#f0515a;" text="Motivation">
+            <Button layoutX="275.0" layoutY="176.0" mnemonicParsing="false" onAction="#creativity" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #ff0000;" text="Motivation" textFill="WHITE">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="100.0" layoutY="269.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="57.0" style="-fx-background-color: #1878f3#1878f3;" text="Calm">
+            <Button layoutX="97.0" layoutY="259.0" mnemonicParsing="false" onAction="#calm" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #00b07b#00b07b;" text="Calm" textFill="WHITE">
                <font>
                   <Font size="7.0" />
                </font>
             </Button>
-            <Button layoutX="238.0" layoutY="272.0" mnemonicParsing="false" prefHeight="32.0" prefWidth="57.0" style="-fx-background-color: #bc42f5#bc42f5;" text="Sleepy">
+            <Button layoutX="216.0" layoutY="259.0" mnemonicParsing="false" onAction="#sleep" prefHeight="39.0" prefWidth="68.0" style="-fx-background-color: #d000ff;" text="Sleepy" textFill="WHITE">
                <font>
                   <Font size="7.0" />
                </font>
@@ -73,15 +68,10 @@
                      </image>
                   </ImageView>
                </graphic>
-            </Menu>
-            <Menu mnemonicParsing="false">
-               <graphic>
-                  <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@kwai_icons/settings.png" />
-                     </image>
-                  </ImageView>
-               </graphic>
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#userDashboard" text="dashboard" />
+                  <MenuItem mnemonicParsing="false" onAction="#login" text="login" />
+               </items>
             </Menu>
          </menus>
       </MenuBar>
