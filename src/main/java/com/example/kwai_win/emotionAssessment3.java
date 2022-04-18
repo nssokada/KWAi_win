@@ -15,6 +15,7 @@ import javafx.scene.control.Label;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import processing.core.PApplet;
 
 import java.io.IOException;
 import java.net.URL;
@@ -169,6 +170,33 @@ public class emotionAssessment3 implements Initializable{
         }
 
     }
+
+
+    @FXML
+    void creativity(ActionEvent event) throws IOException {
+        PApplet.main("creativity");
+    }
+
+    @FXML
+    void calm(ActionEvent event) throws IOException {
+        PApplet.main("Calmer");
+    }
+
+    @FXML
+    void sleep(ActionEvent event) throws IOException {
+        PApplet.main("sleep");
+    }
+
+    @FXML
+    void relax(ActionEvent event) throws IOException {
+        PApplet.main("Relaxed");
+    }
+
+    @FXML
+    void happy(ActionEvent event) throws IOException {
+        PApplet.main("Happier");
+    }
+
 
 
 
