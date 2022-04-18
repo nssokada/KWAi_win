@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
@@ -78,7 +79,34 @@ public class loginController {
 
     public void signupButtonAction(ActionEvent e){
 
-        //todo
+        DatabaseConnection connection = new DatabaseConnection();
+        Connection connectDB = connection.getConnection();
+
+        String verifyLogin = "SELECT count(1) FROM User WHERE username = '" + usernameTextfield.getText() +"'";
+        String newUser = "INSERT INTO User (username, password, email) VALUES(?, ?, ?)";
+
+        try {
+            Statement statement = connectDB.createStatement();
+            ResultSet queryResult  = statement.executeQuery(verifyLogin);
+
+            while(queryResult.next()) {
+                if (queryResult.getInt(1) == 1) {
+                    loginMessagelabel.setText("Sorry! There is already someone with that username registered. Please choose a different username.");
+                } else {
+                    loginMessagelabel.setText("Registration success! Proceed to our main menu.");
+
+                    PreparedStatement preparedStatement = connectDB.prepareStatement(newUser);
+                    preparedStatement.setString(1, usernameTextfield.getText());
+                    preparedStatement.setString(2, passwordPasswordField.getText());
+                    preparedStatement.setString(3, "email@email.com");
+                    preparedStatement.executeUpdate();
+                    user.setName(usernameTextfield.getText());
+                }
+            }
+
+        }  catch (Exception ex) {
+            ex.printStackTrace();
+        }
 
     }
 

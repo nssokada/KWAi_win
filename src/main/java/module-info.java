@@ -18,8 +18,4 @@ module com.example.kwai_win {
     opens com.example.kwai_win to javafx.fxml;
     exports com.example.kwai_win;
 
-
-
-
-
 }
