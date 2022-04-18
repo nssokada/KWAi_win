@@ -82,7 +82,7 @@ public class loginController {
         DatabaseConnection connection = new DatabaseConnection();
         Connection connectDB = connection.getConnection();
 
-        String verifyLogin = "SELECT count(1) FROM User WHERE username = '" + usernameTextfield.getText();
+        String verifyLogin = "SELECT count(1) FROM User WHERE username = '" + usernameTextfield.getText() +"'";
         String newUser = "INSERT INTO User (username, password, email) VALUES(?, ?, ?)";
 
         try {
