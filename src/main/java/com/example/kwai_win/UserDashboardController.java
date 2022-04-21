@@ -71,10 +71,8 @@ public class UserDashboardController implements Initializable{
     @Override
     public void initialize(URL url, ResourceBundle rb)  {
 
-        int arousal = 10;
-        int valence = 10;
-
-        // TODO: Make this query dynamic to the user
+        int arousal = 0;
+        int valence = 0;
 
         try {
             // Database Connection stuff
@@ -192,6 +190,8 @@ public class UserDashboardController implements Initializable{
         lineChart.getData().add(dataSeries1);
     }
 
+    // SQL Query for Last xx days: SELECT AVG(aScore) AS 'avgArousal' FROM Takes WHERE date >= DATE_ADD(NOW(), INTERVAL 30 DAY) AND uID = 50;
+
     @FXML
     void home(ActionEvent event) throws IOException {
         root = FXMLLoader.load(getClass().getResource("homepage.fxml"));
@@ -217,6 +217,394 @@ public class UserDashboardController implements Initializable{
         scene = new Scene(root);
         stage.setScene(scene);
         stage.show();
+    }
+
+    @FXML
+    void latest(ActionEvent event) throws IOException {
+        int arousal = 0;
+        int valence = 0;
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastArousal = "SELECT aScore FROM Takes WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult1 = statement.executeQuery(lastArousal);
+
+                while(queryResult1.next()) {
+                    if (queryResult1.getInt(1) == 1) {
+                        arousal = queryResult1.getInt("aScore");
+                    } else {
+                        aro.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastValence = "SELECT vScore FROM Takes WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        valence = queryResult2.getInt("vScore");
+                    } else {
+                        val.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
+
+
+        String lastVisual = "";
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastViz = "SELECT vID FROM Creates WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastViz);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        lastVisual = queryResult2.getString("vID");
+                    } else {
+                        viz.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        viz.setText(lastVisual);
+
+
+        showLineCharts();
+    }
+    @FXML
+    void oneWeek(ActionEvent event) throws IOException {
+        int arousal = 0;
+        int valence = 0;
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastArousal = "SELECT AVG(aScore) as aScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 7 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult1 = statement.executeQuery(lastArousal);
+
+                while(queryResult1.next()) {
+                    if (queryResult1.getInt(1) == 1) {
+                        arousal = queryResult1.getInt("aScore");
+                    } else {
+                        aro.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastValence = "SELECT AVG(vScore) as vScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 7 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        valence = queryResult2.getInt("vScore");
+                    } else {
+                        val.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
+
+
+        String lastVisual = "";
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastViz = "SELECT vID FROM Creates WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastViz);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        lastVisual = queryResult2.getString("vID");
+                    } else {
+                        viz.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        viz.setText(lastVisual);
+
+
+        showLineCharts();
+    }
+    @FXML
+    void oneMonth(ActionEvent event) throws IOException {
+        // NOTE: We define one month as the past 30 days
+        int arousal = 0;
+        int valence = 0;
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastArousal = "SELECT AVG(aScore) as aScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 30 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult1 = statement.executeQuery(lastArousal);
+
+                while(queryResult1.next()) {
+                    if (queryResult1.getInt(1) == 1) {
+                        arousal = queryResult1.getInt("aScore");
+                    } else {
+                        aro.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastValence = "SELECT AVG(vScore) as vScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 30 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        valence = queryResult2.getInt("vScore");
+                    } else {
+                        val.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
+
+
+        String lastVisual = "";
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastViz = "SELECT vID FROM Creates WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastViz);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        lastVisual = queryResult2.getString("vID");
+                    } else {
+                        viz.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        viz.setText(lastVisual);
+
+
+        showLineCharts();
+
+    }
+    @FXML
+    void threeMonth(ActionEvent event) throws IOException {
+        // NOTE: We define 3 months as the past 90 days
+        int arousal = 0;
+        int valence = 0;
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastArousal = "SELECT AVG(aScore) as aScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 90 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult1 = statement.executeQuery(lastArousal);
+
+                while(queryResult1.next()) {
+                    if (queryResult1.getInt(1) == 1) {
+                        arousal = queryResult1.getInt("aScore");
+                    } else {
+                        aro.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastValence = "SELECT AVG(vScore) as vScore FROM Takes WHERE uID = " + userID + " AND Date(date) >= CURDATE() - INTERVAL 90 day;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastValence);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        valence = queryResult2.getInt("vScore");
+                    } else {
+                        val.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // if query was successful, these should set to the arousal and valence from the latest emotional assessment that the user completed
+        aro.setText(" " + arousal + " ");
+        val.setText(" " + valence + " ");
+
+        int average = (arousal + valence)/ 2;
+        avg.setText("" + average + "");
+
+
+        String lastVisual = "";
+        try {
+            // Database Connection stuff
+            DatabaseConnection connection = new DatabaseConnection();
+            Connection connectDB = connection.getConnection();
+
+            try {
+                String lastViz = "SELECT vID FROM Creates WHERE uID = " + userID + " ORDER BY date DESC LIMIT 1;";
+                Statement statement = connectDB.createStatement();
+                ResultSet queryResult2  = statement.executeQuery(lastViz);
+
+                while(queryResult2.next()) {
+                    if (queryResult2.getInt(1) == 1) {
+                        lastVisual = queryResult2.getString("vID");
+                    } else {
+                        viz.setText("N/A");
+                    }
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+        }
+        viz.setText(lastVisual);
+
+
+        showLineCharts();
     }
 
 
